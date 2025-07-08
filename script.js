@@ -221,19 +221,20 @@ function compartilhar() {
   const relatorio = document.getElementById('relatorio');
   const botoesExcluir = relatorio.querySelectorAll('.btn-excluir');
   const btnBaixar = document.getElementById('btnBaixar');
+  const logo = document.getElementById('logo-relatorio');
 
-  // Esconde botões antes da captura
   botoesExcluir.forEach(btn => btn.style.display = 'none');
   btnBaixar.style.visibility = 'hidden';
-  const larguraOriginal = relatorio.style.width;
   relatorio.style.width = '600px';
+  logo.style.display = 'block'; // mostrar logo
 
   html2canvas(relatorio, {
     scale: 2,
     useCORS: true,
     backgroundColor: "#ffffff"
   }).then(canvas => {
-    relatorio.style.width = larguraOriginal;
+    logo.style.display = 'none'; // esconder logo novamente
+    relatorio.style.width = '';
     botoesExcluir.forEach(btn => btn.style.display = '');
     btnBaixar.style.visibility = 'visible';
 
@@ -256,13 +257,17 @@ function compartilhar() {
   });
 }
 
+
 function baixarRelatorio() {
   const relatorio = document.getElementById('relatorio');
   const btnBaixar = document.getElementById('btnBaixar');
   const botoesExcluir = relatorio.querySelectorAll('.btn-excluir');
+  const logo = document.getElementById('logo-relatorio');
 
+  // Oculta botões e exibe logo apenas durante a captura
   btnBaixar.style.visibility = 'hidden';
   botoesExcluir.forEach(btn => btn.style.display = 'none');
+  logo.style.display = 'block'; // Mostrar a logo
 
   const larguraOriginal = relatorio.style.width;
   relatorio.style.width = '600px';
@@ -277,8 +282,11 @@ function baixarRelatorio() {
     link.href = canvas.toDataURL();
     link.click();
 
+    // Restaurar estado original
     relatorio.style.width = larguraOriginal;
     btnBaixar.style.visibility = 'visible';
     botoesExcluir.forEach(btn => btn.style.display = '');
+    logo.style.display = 'none'; // Ocultar a logo novamente
   });
 }
+
