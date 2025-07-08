@@ -1,0 +1,238 @@
+:root {
+  --cor-primaria: #204499;
+  --cor-primaria-hover: #18377d;
+  --cor-secundaria: #8EC642;
+  --cor-secundaria-clara: #aee57b;
+  --cor-fundo: #f4f8ff;
+  --cor-texto: #333;
+  --cor-branca: #ffffff;
+  --cor-borda: #d6dcef;
+}
+
+/* Estilo base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: var(--cor-fundo);
+  font-size: 16px;
+  color: var(--cor-texto);
+}
+
+h2 {
+  color: var(--cor-primaria);
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* Inputs e selects */
+select, input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--cor-borda);
+  border-radius: 5px;
+}
+
+/* Botões principais */
+.botoes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+button {
+  flex: 1 1 45%;
+  padding: 12px;
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--cor-primaria-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(32, 68, 153, 0.2);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Botão excluir */
+.btn-excluir {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-excluir:hover {
+  background-color: #d93636;
+  transform: scale(1.03);
+  box-shadow: 0 3px 8px rgba(255, 77, 77, 0.2);
+}
+
+.btn-excluir:active {
+  transform: scale(1);
+  box-shadow: none;
+}
+
+/* Relatório */
+#relatorio {
+  margin-top: 30px;
+  padding: 15px;
+  background-color: var(--cor-branca);
+  border: 1px solid var(--cor-borda);
+  border-radius: 10px;
+  font-size: 18px; /* antes: 16px */
+  line-height: 1.5;
+}
+
+#relatorio h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--cor-primaria);
+}
+
+.servico-item {
+  background-color: #e6f0ff;
+  border-left: 6px solid var(--cor-secundaria);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.servico-item .linha {
+  margin-bottom: 6px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.servico-item strong {
+  font-weight: bold;
+  color: var(--cor-texto);
+}
+
+.servico-item .linha::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+}
+
+/* Ícones */
+.servico-item .linha.tipo::before { content: "🛠️"; }
+.servico-item .linha.colaboradores::before { content: "👥"; }
+.servico-item .linha.veiculo::before { content: "🚗"; }
+.servico-item .linha.inicio::before { content: "📅"; }
+.servico-item .linha.unidade::before { content: "🏢"; }
+.servico-item .linha.observacao::before { content: "📝"; }
+
+/* Choices.js override */
+.choices {
+  font-size: 16px;
+}
+
+/* Itens já selecionados: estilo tachado */
+.striked {
+  text-decoration: line-through;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Veículos */
+.veiculo-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.veiculo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  padding: 10px;
+  background-color: #edf7e8;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.veiculo-card input[type="radio"] {
+  display: none;
+}
+
+.veiculo-card img {
+  width: 80px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+.veiculo-card span {
+  font-size: 13px;
+  color: var(--cor-texto);
+}
+
+/* Efeitos ao selecionar veículo */
+.veiculo-card:has(input[type="radio"]:checked) {
+  border-color: var(--cor-primaria);
+  background-color: #d4e2ff;
+}
+
+.veiculo-card input[type="radio"]:checked + img,
+.veiculo-card input[type="radio"]:checked ~ span {
+  filter: brightness(0.9);
+  font-weight: bold;
+}
+
+.datahora-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.datahora-wrapper input[type="datetime-local"] {
+  width: 100%;
+  padding-left: 40px; /* espaço pro ícone */
+  cursor: pointer;
+}
+
+/* Ícone do calendário no Chrome/Edge */
+.datahora-wrapper input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 2;
+}

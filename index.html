@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsividade -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Relatório de Serviços</title>
+
+
+  <!-- Choices.js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+  <h2>Escala de Serviços CMA SUL</h2>
+
+  <label for="tipoServico">Tipo de Serviço:</label>
+  <select id="tipoServico">
+    <option value="">-- Selecione --</option>
+    <option>TRANSPORTE</option>
+    <option>CAPINAÇÃO E LIMPEZA GERAL</option>
+    <option>REPAROS ESTRUTURAIS/ PINTURA CIVIL</option>
+    <option>HIDRÁULICA</option>
+    <option>ELÉTRICA</option>
+    <option>SERRALHARIA</option>
+    <option>Outros</option>
+  </select>
+
+  <label for="colaboradores">Funcionários Participantes:</label>
+  <select id="colaboradores" multiple>
+    <option>Abraão Francisco</option>
+    <option>Amauri Gomes</option>
+    <option>Djalmaci Bezerra</option>
+    <option>Doriedson Ferreira</option>
+    <option>Edivaldo Amaro</option>
+    <option>Edmilson Ramiro</option>
+    <option>Elinaldo Carvalho</option>
+    <option>Geandro Luiz</option>
+    <option>Gilberto dos</option>
+    <option>Gilberto Ferreira</option>
+    <option>Jefferson Vasconcelos</option>
+    <option>João Alves</option>
+    <option>Jonas Rodrigo</option>
+    <option>Jose Fabio</option>
+    <option>José Geraldo</option>
+    <option>Jose Lira</option>
+    <option>Jose Tefla</option>
+    <option>Leonardo Rodrigues</option>
+    <option>Luanne Holanda (ADM)</option>
+    <option>Marcenildo José</option>
+    <option>Marcos Antonio</option>
+    <option>Renato Henrique (ADM)</option>
+    <option>Severino João</option>
+    <option>Talita Priscila (ADM)</option>
+    <option>Iranilda Carmo (COMPESA)</option>
+    <option>Flávio Rosendo (COMPESA)</option>
+    <option>Flávio Simões (COMPESA)</option>
+    <option>Fabrício (COMPESA)</option>
+    <option>Swami Arrecifes (COMPESA)</option>
+    <option>Jéssica Ysabelly (COMPESA)</option>
+    <option>Paulo Braz (COMPESA)</option>
+    <option>Cássia (COMPESA)</option>
+  </select>
+
+<label for="unidade">Unidade:</label>
+<select id="unidade" multiple>
+  <option>RESERVATÓRIO PONTE DOS CARVALHOS</option>
+  <option>RESERVATÓRIO JORDÃO COMPESA</option>
+  <option>RESERVATÓRIO APOIADO CAMELA</option>
+  <option>NOVA ETA/EEAT CAMELA</option>
+  <option>MATAPAGIPE</option>
+  <option>ETA/EEAT/RAP GURJAÚ</option>
+  <option>ETA/EEAT MURIBEQUINHA</option>
+  <option>ETA/EEAT MARCOS FREIRE 1</option>
+  <option>ETA/EEAT CHARNECA E EEAT NOVO HORIZONTE</option>
+  <option>ETA/ EEAT PORTO DE GALINHAS</option>
+  <option>ETA SUAPE</option>
+  <option>ETA PIRAPAMA</option>
+  <option>ETA IPOJUCA</option>
+  <option>EEAT ALGODOAIS</option>
+  <option>EEAB BITA</option>
+  <option>EEAB BARRAGEM PIRAPAMA</option>
+  <option>EEAB - PORTO DE GALINHAS (RIO ARIMBI)</option>
+  <option>CAPTAÇÃO/EEAB PAVÃO</option>
+  <option>CAPTAÇÃO/EEAB MURIBEQUINHA</option>
+  <option>CAPTAÇÃO/EEAB MARCOS FREIRE</option>
+  <option>CAPTAÇÃO/EEAB IPOJUCA</option>
+  <option>BOOSTER SÃO MIGUEL - IPOJUCA</option>
+  <option>BARRAGEM UTINGA</option>
+  <option>BARRAGEM TRÊS PASSAGENS - IPOJUCA</option>
+  <option>BARRAGEM SÃO PEDRO - CAMELA</option>
+  <option>BARRAGEM PIRAPAMA</option>
+  <option>BARRAGEM GURJAÚ</option>
+  <option>BARRAGEM DE SICUPEMA</option>
+  <option>BARRAGEM CHARNECA (FAZENDA SEBASTOPOL)</option>
+  <option>BARRAGEM BITA</option>
+  <option>Outras</option>
+</select>
+
+
+<label>Veículo:</label>
+<div id="veiculos" class="veiculo-opcoes">
+    <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="RZO2H73">
+    <img src="img/RZO2H73.png" alt="RZO2H73">
+    <span>RZO2H73</span>
+  </label>
+  <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="RZO3G50">
+    <img src="img/RZO3G50.png" alt="RZO3G50">
+    <span>RZO3G50</span>
+  </label>
+    <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="QYY0G07">
+    <img src="img/QYY0G07.png" alt="QYY0G07">
+    <span>QYY0G07</span>
+  </label>
+    <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="KII8770">
+    <img src="img/KII8770.png" alt="KII8770">
+    <span>KII8770</span>
+  </label>
+    <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="SOD6G88">
+    <img src="img/SOD6G88.png" alt="SOD6G88">
+    <span>SOD6G88</span>
+  </label>
+    <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="PCA5320">
+    <img src="img/PCA5320.png" alt="PCA5320">
+    <span>PCA5320</span>
+  </label>
+  <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="PEW3772">
+    <img src="img/PEW3772.png" alt="PEW3772">
+    <span>PEW3772</span>
+  </label>
+    <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="SJG1G06">
+    <img src="img/SJG1G06.png" alt="SJG1G06">
+    <span>SJG1G06</span>
+  </label>
+  <label class="veiculo-card">
+    <input type="radio" name="veiculo" value="SJE0D78">
+    <img src="img/SJE0D78.png" alt="SJE0D78">
+    <span>SJE0D78</span>
+  </label>
+</div>
+  
+  <label for="dataHora">Data/Hora de Início:</label>
+  <div class="datahora-wrapper">
+  <input type="datetime-local" id="dataHora">
+  </div>
+
+
+  <label for="observacao">Observação:</label>
+  <input type="text" id="observacao" placeholder="Digite algo...">
+
+  <div class="botoes">
+    <button onclick="adicionarServico()">Adicionar</button>
+    <button onclick="compartilhar()">Compartilhar</button>
+  </div>
+
+  <div id="relatorio">
+    <h3>Relatório de Escala de Serviços CMA SUL</h3>
+    <div id="listaServicos"></div>
+    <button id="btnBaixar" onclick="baixarRelatorio()" style="display: none;">📥 Baixar Relatório</button>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
